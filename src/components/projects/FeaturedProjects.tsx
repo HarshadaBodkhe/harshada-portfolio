@@ -164,6 +164,7 @@ export const FeaturedProjects: React.FC<FeaturedProjectsProps> = ({
         <p>ClassLens — Intelligent Attendance System</p>
         <p>SliceIt — Pizza Delivery System</p>
         <p>AI Research Assistant — Agentic RAG System</p>
+        <p>Harshada Portfolio — Personal Portfolio</p>
       </div>
 
       <div className="max-w-7xl w-full mx-auto flex flex-col items-center text-center" aria-hidden="true">
@@ -181,7 +182,7 @@ export const FeaturedProjects: React.FC<FeaturedProjectsProps> = ({
         {/* Introductory Supporting Sentence */}
         <p
           ref={headingRef}
-          className="text-base sm:text-lg md:text-xl font-sans font-normal text-[var(--text-secondary)] leading-relaxed mb-4 sm:mb-5 max-w-2xl text-center"
+          className="text-base sm:text-lg md:text-xl font-sans font-normal text-[var(--text-secondary)] leading-relaxed mb-10 sm:mb-14 md:mb-16 max-w-2xl text-center"
         >
           A look at the problems I’ve explored and the solutions I’ve built.
         </p>
@@ -189,27 +190,47 @@ export const FeaturedProjects: React.FC<FeaturedProjectsProps> = ({
         {/* Dedicated Showcase Stage with Stable Height to Prevent Page Jumps */}
         <div
           ref={stageRef}
-          className="relative w-full min-h-[480px] sm:min-h-[500px] flex items-center justify-center"
+          className="relative w-full min-h-[560px] sm:min-h-[640px] flex items-center justify-center"
         >
-          {/* INITIAL ROW STATE: 4 Projects in 1 Horizontal Row (Desktop) / Vertical Stack (Mobile) */}
+          {/* INITIAL STATE: 3 Projects in Row 1, 2 Projects in Row 2 (Desktop) / Vertical Stack (Mobile) */}
           <div
-            className={`w-full transition-all duration-500 ease-out flex flex-col lg:flex-row items-center justify-center gap-6 sm:gap-8 lg:gap-8 ${
+            className={`w-full max-w-5xl transition-all duration-500 ease-out flex flex-col gap-8 sm:gap-10 lg:gap-12 ${
               activeProjectId ? 'opacity-0 pointer-events-none absolute inset-0' : 'opacity-100 relative'
             }`}
           >
-            {PROJECTS.map((project, index) => (
-              <ProjectCard
-                key={project.id}
-                ref={setCardRef(index)}
-                project={project}
-                isActive={false}
-                isAnyActive={false}
-                onMouseEnter={() => handleMouseEnter(project.id)}
-                onMouseLeave={() => {}}
-                onFocus={() => handleFocus(project.id)}
-                onClick={() => handleClick(project.id)}
-              />
-            ))}
+            {/* ROW 1: 3 Projects */}
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-8 lg:gap-10">
+              {PROJECTS.slice(0, 3).map((project, index) => (
+                <ProjectCard
+                  key={project.id}
+                  ref={setCardRef(index)}
+                  project={project}
+                  isActive={false}
+                  isAnyActive={false}
+                  onMouseEnter={() => handleMouseEnter(project.id)}
+                  onMouseLeave={() => {}}
+                  onFocus={() => handleFocus(project.id)}
+                  onClick={() => handleClick(project.id)}
+                />
+              ))}
+            </div>
+
+            {/* ROW 2: 2 Projects */}
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-8 lg:gap-10">
+              {PROJECTS.slice(3, 5).map((project, index) => (
+                <ProjectCard
+                  key={project.id}
+                  ref={setCardRef(index + 3)}
+                  project={project}
+                  isActive={false}
+                  isAnyActive={false}
+                  onMouseEnter={() => handleMouseEnter(project.id)}
+                  onMouseLeave={() => {}}
+                  onFocus={() => handleFocus(project.id)}
+                  onClick={() => handleClick(project.id)}
+                />
+              ))}
+            </div>
           </div>
 
           {/* ACTIVE EXPANDED STATE LAYER */}

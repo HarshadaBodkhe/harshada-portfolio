@@ -41,7 +41,7 @@ export const ProjectImage: React.FC<ProjectImageProps> = ({
           alt={alt}
           onLoad={() => setIsLoaded(true)}
           onError={() => setHasError(true)}
-          className={`w-full h-full object-cover transition-all duration-700 ease-out ${
+          className={`w-full h-full object-cover object-top transition-all duration-700 ease-out ${
             isLoaded ? 'opacity-100 scale-100' : 'opacity-0 scale-105'
           } lg:group-hover:scale-[1.03] lg:group-hover:brightness-105`}
         />

@@ -1,20 +1,19 @@
 import React, { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { ArrowDown } from 'lucide-react';
 
-import { SliceItHeader } from './SliceItHeader';
-import { SliceItProblemSolution } from './SliceItProblemSolution';
-import { SliceItResultsFuture } from './SliceItResultsFuture';
-import { SliceItArchitectureWorkflow } from './SliceItArchitectureWorkflow';
-import { SliceItFunctionalitiesImplementation } from './SliceItFunctionalitiesImplementation';
-import { SliceItDecisionsChallenges } from './SliceItDecisionsChallenges';
-import { SliceItTechStack } from './SliceItTechStack';
-import { SliceItGallery } from './SliceItGallery';
+import { PortfolioHeader } from './PortfolioHeader';
+import { PortfolioProblemSolution } from './PortfolioProblemSolution';
+import { PortfolioResultsFuture } from './PortfolioResultsFuture';
+import { PortfolioArchitectureWorkflow } from './PortfolioArchitectureWorkflow';
+import { PortfolioFunctionalitiesImplementation } from './PortfolioFunctionalitiesImplementation';
+import { PortfolioDecisionsChallenges } from './PortfolioDecisionsChallenges';
+import { PortfolioTechStack } from './PortfolioTechStack';
+import { PortfolioGallery } from './PortfolioGallery';
 
 gsap.registerPlugin(ScrollTrigger);
 
-export const SliceItCaseStudy: React.FC = () => {
+export const PortfolioCaseStudy: React.FC = () => {
   const containerRef = useRef<HTMLElement>(null);
   const transitionRef = useRef<HTMLDivElement>(null);
 
@@ -47,48 +46,47 @@ export const SliceItCaseStudy: React.FC = () => {
 
   return (
     <section
-      id="sliceit-case-study"
+      id="harshada-portfolio-case-study"
       ref={containerRef}
       className="relative w-full py-8 sm:py-14 px-4 sm:px-8 overflow-hidden flex flex-col items-center bg-transparent"
     >
       {/* Centered Unified Container: Max-width 880px */}
       <div className="w-full max-w-[880px] mx-auto flex flex-col items-center space-y-12 sm:space-y-16">
-        {/* 1. Project Header (IMAGE LEFT | CONTENT RIGHT) */}
-        <SliceItHeader />
+        {/* 1. Project Header */}
+        <PortfolioHeader />
 
         {/* 2. Engineering Challenges + Technical Approach */}
-        <SliceItProblemSolution />
+        <PortfolioProblemSolution />
 
-        {/* 3. 2-Column Key Results + Future Scope */}
-        <SliceItResultsFuture />
+        {/* 3. Key Outcome + Future Scope */}
+        <PortfolioResultsFuture />
 
         {/* 4. System Architecture Diagram & Request Workflow */}
-        <SliceItArchitectureWorkflow />
+        <PortfolioArchitectureWorkflow />
 
         {/* 5. Core Functionalities & Technical Implementation */}
-        <SliceItFunctionalitiesImplementation />
+        <PortfolioFunctionalitiesImplementation />
 
         {/* 6. Technical Decisions & Engineering Reflections */}
-        <SliceItDecisionsChallenges />
+        <PortfolioDecisionsChallenges />
 
         {/* 7. Verified Tech Stack */}
-        <SliceItTechStack />
+        <PortfolioTechStack />
 
         {/* 8. Media Gallery */}
-        <SliceItGallery />
+        <PortfolioGallery />
 
-        {/* 9. Next Project Transition */}
+        {/* 9. End of Full Stack Collection Transition */}
         <div
           ref={transitionRef}
           className="w-full pt-10 border-t border-[#1B3047]/30 flex flex-col items-center space-y-2 text-center"
         >
           <span className="font-mono text-xs font-semibold tracking-[0.25em] text-[#6DB8F5] uppercase">
-            NEXT PROJECT
+            FULL STACK COLLECTION COMPLETE
           </span>
-          <p className="text-xs text-[#A7B5C7]/60 font-mono">
-            Personal Portfolio &bull; Interactive Full-Stack Portfolio &amp; Engineering Showcase
+          <p className="text-xs text-[#A7B5C7]/70 font-mono">
+            &ldquo;Crafting robust, scalable web architectures.&rdquo;
           </p>
-          <ArrowDown className="w-3.5 h-3.5 text-[#6DB8F5] animate-bounce mt-1" />
         </div>
       </div>
     </section>

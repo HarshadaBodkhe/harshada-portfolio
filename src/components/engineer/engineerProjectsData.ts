@@ -1,6 +1,7 @@
 import React from 'react';
 import { DwelloCaseStudy } from './dwello/DwelloCaseStudy';
 import { SliceItCaseStudy } from './sliceit/SliceItCaseStudy';
+import { PortfolioCaseStudy } from './portfolio/PortfolioCaseStudy';
 import { ClassLensCaseStudy } from './classlens/ClassLensCaseStudy';
 import { ResearchCaseStudy } from './research_assistant/ResearchCaseStudy';
 
@@ -34,6 +35,11 @@ export const ENGINEER_PROJECTS: Record<ProjectType, Record<DomainType, ProjectDe
         id: 'sliceit',
         title: 'SliceIt',
         component: SliceItCaseStudy,
+      },
+      {
+        id: 'harshada-portfolio',
+        title: 'Personal Portfolio',
+        component: PortfolioCaseStudy,
       },
     ],
     aiml: [

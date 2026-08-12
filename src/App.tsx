@@ -28,7 +28,7 @@ export const AppContent: React.FC = () => {
     let targetType: ProjectType = 'major';
     let targetDomain: DomainType = 'fullstack';
 
-    if (projectId === 'dwello' || projectId === 'sliceit') {
+    if (projectId === 'dwello' || projectId === 'sliceit' || projectId === 'harshada-portfolio') {
       targetType = 'major';
       targetDomain = 'fullstack';
     } else if (projectId === 'classlens' || projectId === 'ai-research-assistant') {

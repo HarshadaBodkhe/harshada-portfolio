@@ -78,4 +78,17 @@ export const PROJECTS: Project[] = [
     githubUrl: 'https://github.com/HarshadaBodkhe/Agentic-RAG-Assistant',
     image: '/projects/ai-research-assistant.png',
   },
+  {
+    id: 'harshada-portfolio',
+    number: '05',
+    name: 'Harshada Portfolio',
+    title: 'Harshada Portfolio — Personal Portfolio',
+    shortDescription:
+      'An interactive personal portfolio designed to showcase AI, full-stack development, engineering projects, and technical work through recruiter and engineer-focused experiences.',
+    description:
+      'An interactive personal portfolio designed to showcase AI, full-stack development, engineering projects, and technical work through recruiter and engineer-focused experiences.',
+    technologies: ['React', 'TypeScript', 'Vite', 'Tailwind CSS', 'GSAP', 'JavaScript'],
+    githubUrl: 'https://github.com/HarshadaBodkhe/harshada-portfolio',
+    image: '/projects/harshada-portfolio.png',
+  },
 ];
