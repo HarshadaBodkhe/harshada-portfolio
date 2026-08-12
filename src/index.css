@@ -1,0 +1,220 @@
+@import "tailwindcss";
+
+:root, html[data-theme="dark"] {
+  color-scheme: dark;
+
+  --bg-dark: #060B14;
+  --bg-secondary: #101827;
+  --bg-surface: #162234;
+  --bg-nav: #0F1624;
+
+  --border-subtle: #24354D;
+  --border-hover: #3A4E6B;
+
+  --text-primary: #F4F7FB;
+  --text-secondary: #AAB7C7;
+  --text-muted: #718096;
+
+  --accent: #72BEFF;
+  --accent-hover: #97D7FF;
+
+  --glow-subtle: rgba(114, 190, 255, 0.20);
+  --glow-strong: rgba(114, 190, 255, 0.35);
+
+  --vignette: radial-gradient(circle at 50% 30%, rgba(16, 24, 39, 0.5) 0%, rgba(6, 11, 20, 0.98) 100%);
+  --dot-opacity: 0.015;
+}
+
+html[data-theme="light"] {
+  color-scheme: light;
+
+  --bg-dark: #F5F8FC;
+  --bg-secondary: #FFFFFF;
+  --bg-surface: #EDF4FA;
+  --bg-nav: #FFFFFF;
+
+  --border-subtle: #D7E2EC;
+  --border-hover: #BCCEDD;
+
+  --text-primary: #17212B;
+  --text-secondary: #526171;
+  --text-muted: #718096;
+
+  --accent: #2686D9;
+  --accent-hover: #1675C7;
+
+  --glow-subtle: rgba(38, 134, 217, 0.10);
+  --glow-strong: rgba(38, 134, 217, 0.18);
+
+  --vignette: radial-gradient(circle at 50% 30%, rgba(237, 244, 250, 0.6) 0%, rgba(245, 248, 252, 0.98) 100%);
+  --dot-opacity: 0.03;
+}
+
+@theme {
+  --color-bg-dark: var(--bg-dark);
+  --color-bg-secondary: var(--bg-secondary);
+  --color-bg-surface: var(--bg-surface);
+  --color-bg-nav: var(--bg-nav);
+
+  --color-border-subtle: var(--border-subtle);
+  --color-border-hover: var(--border-hover);
+
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-text-muted: var(--text-muted);
+
+  --color-accent: var(--accent);
+  --color-accent-hover: var(--accent-hover);
+
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-dark);
+  color: var(--text-primary);
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  overflow-x: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-dark);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-subtle);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent);
+}
+
+.horizontal-scrollbar-thin::-webkit-scrollbar {
+  height: 3px;
+}
+
+.horizontal-scrollbar-thin::-webkit-scrollbar-track {
+  background: rgba(3, 9, 20, 0.4);
+}
+
+.horizontal-scrollbar-thin::-webkit-scrollbar-thumb {
+  background: var(--border-subtle);
+  border-radius: 9999px;
+}
+
+.horizontal-scrollbar-thin::-webkit-scrollbar-thumb:hover {
+  background: var(--accent);
+}
+
+/* Ambient glow utility classes */
+.lc-blue-glow {
+  box-shadow: 0 0 20px -4px var(--glow-strong);
+}
+
+/* Radial Vignette */
+.bg-radial-vignette {
+  background: var(--vignette);
+}
+
+/* LIGHT MODE COMPONENT & TEXT CONTRAST OVERRIDES */
+html[data-theme="light"] {
+  /* Text colors: ensure light text and opacity variants become crisp dark text in light mode */
+  [class*="text-[#E8EEF5]" i],
+  [class*="text-[#F4F7FB]" i],
+  [class*="text-[#E2E8F0]" i],
+  [class*="text-[#F1F5F9]" i],
+  .text-white:not(.keep-white) {
+    color: #17212B !important;
+  }
+
+  [class*="text-[#A7B5C7]" i],
+  [class*="text-[#94A3B8]" i],
+  [class*="text-[#8A99AD]" i],
+  [class*="text-[#64748B]" i] {
+    color: #526171 !important;
+  }
+
+  [class*="text-[#6DB8F5]" i],
+  [class*="text-[#72BEFF]" i],
+  [class*="text-[#38BDF8]" i] {
+    color: #2686D9 !important;
+  }
+
+  /* Background surfaces in light mode: force all dark card/step/node containers to clean light background */
+  [class*="bg-[#020711]" i],
+  [class*="bg-[#030914]" i],
+  [class*="bg-[#060B14]" i],
+  [class*="bg-[#060c18]" i],
+  [class*="bg-[#040812]" i],
+  [class*="bg-[#081324]" i],
+  [class*="bg-[#081224]" i],
+  [class*="bg-[#080E1A]" i],
+  [class*="bg-[#030712]" i],
+  [class*="bg-[#040a14]" i],
+  [class*="bg-[#071325]" i],
+  [class*="bg-[#081220]" i],
+  [class*="bg-[#050b14]" i],
+  [class*="bg-[#060D1A]" i] {
+    background-color: #EDF4FA !important;
+  }
+
+  [class*="bg-[#091426]" i],
+  [class*="bg-[#050E1E]" i],
+  [class*="bg-[#0D1B2E]" i],
+  [class*="bg-[#101827]" i],
+  [class*="bg-[#162234]" i],
+  [class*="bg-[#0A1628]" i],
+  [class*="bg-[#0F223A]" i],
+  [class*="bg-[#0C1B2E]" i],
+  [class*="bg-[#0f172a]" i],
+  [class*="bg-[#152D4F]" i],
+  [class*="bg-[#111c2d]" i],
+  [class*="bg-[#091527]" i] {
+    background-color: #FFFFFF !important;
+  }
+
+  /* Hover states in light mode */
+  [class*="hover:bg-[#091527]" i]:hover,
+  [class*="hover:bg-[#091426]" i]:hover,
+  [class*="hover:bg-[#060c18]" i]:hover,
+  [class*="hover:bg-[#081324]" i]:hover,
+  [class*="hover:bg-[#0A1628]" i]:hover {
+    background-color: #E2EFF9 !important;
+  }
+
+  /* Borders in light mode */
+  [class*="border-[#1B3047]" i],
+  [class*="border-[#24354D]" i],
+  [class*="border-[#2A486A]" i],
+  [class*="border-[#1E293B]" i] {
+    border-color: #D7E2EC !important;
+  }
+
+  [class*="border-[#6DB8F5]" i] {
+    border-color: rgba(38, 134, 217, 0.4) !important;
+  }
+
+  /* SVG fills and strokes in contact & feature icons */
+  svg[class*="text-[#E8EEF5]" i],
+  svg.text-\[\#E8EEF5\] {
+    color: #17212B !important;
+    fill: currentColor;
+  }
+
+  /* Native select and dropdown option contrast in Light mode */
+  option,
+  select {
+    background-color: #FFFFFF !important;
+    color: #17212B !important;
+  }
+}
