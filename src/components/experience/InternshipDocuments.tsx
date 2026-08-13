@@ -42,9 +42,9 @@ export const InternshipDocuments: React.FC<InternshipDocumentsProps> = ({
 
   return (
     <div className={`relative flex flex-col items-center lg:items-start ${className}`}>
-      {/* Evidence Header Label */}
+      {/* Certificate Header Label */}
       <span className="text-[11px] font-mono tracking-widest text-[var(--text-muted)] uppercase mb-4 text-center lg:text-left">
-        INTERNSHIP EVIDENCE
+        INTERNSHIP CERTIFICATE
       </span>
 
       {/* Visual Stage for Overlapping Documents */}

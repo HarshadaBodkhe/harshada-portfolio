@@ -97,7 +97,7 @@ export const ExperienceSection: React.FC = () => {
         <h2>Professional Experience - Oasis Infobyte</h2>
         <p>Full Stack Development Intern, January 2026 to February 2026.</p>
         <p>
-          Developed SliceIt, a MERN-stack pizza delivery application as an internship project, implementing authentication, order management, product management, and user workflows.
+          Developed SliceIt, a MERN-stack pizza delivery application as an internship project, implementing authentication, order management, inventory management, and user workflows.
         </p>
         <p>
           Built REST APIs and an admin dashboard, and integrated the Razorpay payment gateway to support the application's ordering and payment flow.
@@ -182,7 +182,7 @@ export const ExperienceSection: React.FC = () => {
               {/* Concise Description */}
               <div ref={descRef} className="space-y-4 text-base sm:text-lg text-[var(--text-secondary)] font-sans leading-relaxed pt-1">
                 <p>
-                  Developed SliceIt, a MERN-stack pizza delivery application as an internship project, implementing authentication, order management, product management, and user workflows.
+                  Developed SliceIt, a MERN-stack pizza delivery application as an internship project, implementing authentication, order management, inventory management, and user workflows.
                 </p>
                 <p>
                   Built REST APIs and an admin dashboard, and integrated the Razorpay payment gateway to support the application's ordering and payment flow.
